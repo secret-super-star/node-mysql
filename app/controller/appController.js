@@ -21,3 +21,12 @@ exports.list_all_users = function(req, res) {
     res.json(user);
   });
 };
+
+exports.usercount = function(req, res) {
+
+  User.usercount(function(err, user) {
+    if (err)
+      res.send(err);
+    res.json(user);
+  });
+};

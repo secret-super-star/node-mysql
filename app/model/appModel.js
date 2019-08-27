@@ -25,4 +25,15 @@ User.getUserList = function(result) {
   });
 };
 
+User.usercount = function(result) {
+  sql.query("Select count(*) as count from users", function(err, res) {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res[0]);
+    }
+  });
+};
+
 module.exports = User;

@@ -7,5 +7,8 @@ module.exports = function(app) {
     .get(todoList.list_all_users);
 
   app.route('/users/detail')
-    .post(todoList.read_a_user)
+    .post(todoList.read_a_user);
+
+  app.route('/users/count')
+    .get(todoList.usercount)
 };
